@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+int main() 
+{
+	int testCases;
+	int i;
+	int firstDate, secondDate, rangeDay;
+	int result;
+	
+	scanf("%d", &testCases);
+	fgetc(stdin);
+	for (i = 0; i < testCases; i++)
+	{
+		scanf("%d %d %d", &rangeDay,&firstDate, &secondDate);
+		fgetc(stdin);
+		if(rangeDay >= firstDate && rangeDay <= secondDate) 
+				printf("Take second dose now\n");
+		if (rangeDay > secondDate) 
+			printf("Too Late\n");
+		if (rangeDay < firstDate)
+			printf("Too Early\n");
+	}
+	
+
+	return 0;
+}
