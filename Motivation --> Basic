@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int testCases;
+    int i;
+    
+    int numberOfMovies;
+    int remainingHardDiskSpace;
+
+    int requiredSpace;
+    int IMDBrating;
+
+   
+
+    scanf("%d", &testCases);
+    while (testCases--)
+    {
+        int maxRating = 0;
+        scanf("%d %d", &numberOfMovies, &remainingHardDiskSpace);
+        for (i = 0; i < numberOfMovies; i++)
+        {
+            scanf("%d %d", &requiredSpace, &IMDBrating);
+            if (requiredSpace <= remainingHardDiskSpace && IMDBrating > maxRating)
+                maxRating = IMDBrating;
+        }
+        
+        printf("%d\n", maxRating);
+
+    }
+
+    return 0;
+}
