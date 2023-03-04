@@ -1,0 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    
+    //He needs one fruit and one vegetable to make the first type of dish 
+    // and one vegetable
+    //and one fish to make the second type of dish.
+    
+    int testCases;
+    int i;
+    
+    int numberOfGuests;
+    int fruits, vegetables, fishes;
+    
+    scanf("%d", &testCases);
+    while (testCases--)
+    {
+       
+        int dishTypeOne = 0, dishTypeTwo = 0, totalElements = 0, totalDishes;
+
+        scanf("%d %d %d %d", &numberOfGuests, &fruits,&vegetables,&fishes);
+        totalElements = fruits + vegetables + fishes;
+
+        int count = 0;
+        while (count < numberOfGuests)
+        {
+            //type one
+            if (fruits > 0 && vegetables > 0)
+            {
+                dishTypeOne++;
+                fruits--;
+                vegetables--;
+            }
+            //type TWO
+            if (vegetables > 0 && fishes > 0)
+            {
+                dishTypeTwo++;
+                vegetables--;
+                fishes--;
+            }
+
+            totalElements = fruits + vegetables + fishes;
+            count++;
+        }
+
+        totalDishes = dishTypeOne + dishTypeTwo;
+        if (totalDishes >= numberOfGuests)
+            printf("YES\n");
+        else
+            printf("NO\n");
+       
+    }
+    return 0;
+}
