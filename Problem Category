@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    
+    int testCases;
+    int problem;
+    scanf("%d",&testCases);
+
+  
+    while (testCases--)
+    {
+        scanf("%d", &problem);
+        if (problem >= 1 && problem < 100)
+            printf("Easy\n");
+        else if (problem >= 100 && problem < 200)
+            printf("Medium\n");
+        else if (problem >= 200 && problem <= 300)
+            printf("Hard\n");
+    }
+
+    return 0;
+}
