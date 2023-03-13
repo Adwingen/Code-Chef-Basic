@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    
+    int testCases;
+    int powerA=0, powerB=0, powerC=0;
+    
+    scanf("%d",&testCases);
+
+  
+    while (testCases--)
+    {
+        int hitPoints = 0;
+
+        scanf("%d %d %d", &powerA, &powerB, &powerC);
+        if (hitPoints < powerA + powerB)
+            hitPoints = powerA + powerB;
+        if(hitPoints < powerB + powerC)
+            hitPoints = powerB + powerC;
+        if (hitPoints < powerA + powerC)
+            hitPoints = powerA + powerC;
+
+        printf("%d\n", hitPoints);
+    }
+
+    return 0;
+}
+
