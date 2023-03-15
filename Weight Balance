@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    
+    int testCases;
+    int w1, w2, x1, x2, measured;
+    int maximumIncrease, minimumIncrease, weight;
+ 
+    
+    scanf("%d",&testCases);
+
+  
+    while (testCases--)
+    {
+        scanf("%d %d %d %d %d", &w1, &w2, &x1, &x2, &measured);
+        weight = w2 - w1;
+        minimumIncrease = x1 * measured;
+        maximumIncrease = x2 * measured;
+        if (weight >= minimumIncrease && weight <=maximumIncrease)
+            printf("1\n");
+        else
+            printf("0\n");
+    }
+
+    return 0;
+}
