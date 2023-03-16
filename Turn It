@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main()
+{
+    
+    int testCases;
+    float u, v, a, s;
+    float Newton2ndLaw;  
+    float safeSpeedSquared;
+    
+    scanf("%d",&testCases);
+
+  
+    while (testCases--)
+    {
+        scanf("%f %f %f %f", &u,&v,&a,&s);
+
+        Newton2ndLaw = (u * u) - 2 * a * s;
+        safeSpeedSquared = v * v;
+    
+        if (Newton2ndLaw <= safeSpeedSquared)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+
+    return 0;
+}
+
