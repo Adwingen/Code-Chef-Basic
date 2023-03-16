@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    
+    int testCases;
+    float s, a, b, c;
+    float increment, result;
+ 
+    
+    scanf("%d",&testCases);
+
+  
+    while (testCases--)
+    {
+        scanf("%f %f %f %f", &s, &a,&b,&c);
+        increment = s * (c / 100);
+        result = s + increment;
+    
+        if (result >= a && result <= b)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+
+    return 0;
+}
