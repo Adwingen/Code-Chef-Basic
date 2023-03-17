@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main()
+{
+
+    int testCases;
+    int a, b, c, d, k;
+    int result;
+
+   
+
+    scanf("%d", &testCases);
+
+    while (testCases--)
+    {
+        scanf("%d %d %d %d %d", &a, &b, &c, &d, &k);
+        result = abs(a - c) + abs(b - d);
+        if (k >= result)
+        {
+            if ((k - result) % 2 == 0)
+                printf("YES\n");
+            else
+                printf("NO\n");
+        }
+        else
+            printf("NO\n");
+      
+        
+    }
+    return 0;
+}
+
